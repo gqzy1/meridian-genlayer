@@ -100,7 +100,7 @@ class EvidenceTests(unittest.TestCase):
     def test_rfc_editor_documents(self):
         root = Path(os.environ["MERIDIAN_RFC_SOURCES"])
         def request(url, **_):
-            return SimpleNamespace(status_code=200, body=(root / url.rsplit("/", 1)[1]).read_bytes())
+            return SimpleNamespace(status=200, body=(root / url.rsplit("/", 1)[1]).read_bytes())
         with patch.object(runtime.gl, "nondet", SimpleNamespace(web=SimpleNamespace(request=request)), create=True):
             old, new = contract._read_document(OLD, "4.2.1"), contract._read_document(NEW, "9.2.1")
         self.assertEqual((old["month"], new["month"]), ("2014-06", "2022-06"))

@@ -1,0 +1,316 @@
+{
+  "network": "Stable StudioNet",
+  "deployment": {
+    "address": "0xFF227A2317bF3E700F9A2d42dA835399367f143D",
+    "chainId": 61999,
+    "sourceSha256": "77cd53037f1c588d4b62fec5e0bb132e0893fd5b8c472dca5236c473227edcbb",
+    "hash": "0xe957f22e63f41e8a8c337e586790cbca6665d17246bb430c55b6db551d4bd819",
+    "finality": "FINALIZED",
+    "outcome": "MAJORITY_AGREE",
+    "execution": "SUCCESS",
+    "leaderOnly": false,
+    "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+    "initialState": {
+      "active": 0,
+      "inconclusive": 0,
+      "refuted": 0,
+      "total_adjudications": 0,
+      "total_claims": 0,
+      "verified": 0
+    }
+  },
+  "records": [
+    {
+      "id": "MRD-001",
+      "expected": "VERIFIED",
+      "registration": {
+        "hash": "0x8d6d7cf5bceb59d1e82155235a3129413b739e4b2bb908205d0dd1d4eac09737",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "adjudication": {
+        "hash": "0xbcc853fc071d2cbf26a012cc5a2e87b92e31fc0aa6657d84f3ebe0b10d3b04f1",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "claim": {
+        "adjudications": 1,
+        "category": "PROTOCOL",
+        "claim_id": "MRD-001",
+        "confidence": 0,
+        "criteria": "As of 2022-06; sections 4.2.1 / 9.2.1; The specification defines GET as a safe method.",
+        "evidence_excerpt": "Of the request methods defined by this specification, the GET, HEAD, OPTIONS, and TRACE methods are defined to be safe.",
+        "last_adjudicator": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "lat_e4": 473769,
+        "lng_e4": 85417,
+        "primary_status": "REACHABLE",
+        "primary_url": "https://www.rfc-editor.org/rfc/rfc7231.txt",
+        "region_label": "Zurich, CH",
+        "secondary_status": "REACHABLE",
+        "secondary_url": "https://www.rfc-editor.org/rfc/rfc9110.txt",
+        "status": "VERIFIED",
+        "submitter": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "summary": "RFC 9110 §9.2.1 · Cutoff 2022-06 | Evidence SHA-256 d8b47e04a90e014a1af14d642f84edc1dd012e41d51c01298fb72341e729aee0",
+        "title": "HTTP GET is a safe method"
+      },
+      "evidence": {
+        "cutoff": "2022-06",
+        "primary": {
+          "digest": "a83d026937f6f7929a0e53f8a9bfec4104285f0f89d6dbabd3927c4208a715b2",
+          "month": "2014-06",
+          "obsoletes": [
+            "2616"
+          ],
+          "rfc": "7231",
+          "section": "4.2.1",
+          "status": "REACHABLE"
+        },
+        "quote": "Of the request methods defined by this specification, the GET, HEAD, OPTIONS, and TRACE methods are defined to be safe.",
+        "reason": "",
+        "secondary": {
+          "digest": "ad3b38b7806783d5066714f7ac9aadcba8cec1605a400c7380173737a8adf902",
+          "month": "2022-06",
+          "obsoletes": [
+            "2818",
+            "7230",
+            "7231",
+            "7232",
+            "7233",
+            "7235",
+            "7538",
+            "7615",
+            "7694"
+          ],
+          "rfc": "9110",
+          "section": "9.2.1",
+          "status": "REACHABLE"
+        },
+        "selected": "9110",
+        "start": 1102,
+        "verdict": "VERIFIED"
+      },
+      "evidenceSha256": "d8b47e04a90e014a1af14d642f84edc1dd012e41d51c01298fb72341e729aee0",
+      "votes": {
+        "0x19a02f95418A6c76091CDA37C4fc542CA82805c9": "idle",
+        "0x1B490819e040562a5fb40CD64B1c70D4419c38d1": "idle",
+        "0x23A15A452F19D1B616276fedC5B8B51d69082959": "agree",
+        "0xBE58b43DF1d991e054F743Cc5571dD7029F3B888": "agree",
+        "0xe358f855C96d8E7243836cf986eb037175B9467e": "agree"
+      }
+    },
+    {
+      "id": "MRD-002",
+      "expected": "REFUTED",
+      "registration": {
+        "hash": "0x6e48d8b140fbd5f06ee0438876bfeb29cbda5c44e74f331859f3a97330420b9c",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "adjudication": {
+        "hash": "0x8e9041409e14533d917bb4b98ba20fb3c07b5590a66dbad146d0eea262d3f122",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "claim": {
+        "adjudications": 1,
+        "category": "PROTOCOL",
+        "claim_id": "MRD-002",
+        "confidence": 0,
+        "criteria": "As of 2022-06; sections 4.2.1 / 9.2.1; The specification explicitly classifies GET as unsafe.",
+        "evidence_excerpt": "Of the request methods defined by this specification, the GET, HEAD, OPTIONS, and TRACE methods are defined to be safe.",
+        "last_adjudicator": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "lat_e4": 377749,
+        "lng_e4": -1224194,
+        "primary_status": "REACHABLE",
+        "primary_url": "https://www.rfc-editor.org/rfc/rfc7231.txt",
+        "region_label": "San Francisco, US",
+        "secondary_status": "REACHABLE",
+        "secondary_url": "https://www.rfc-editor.org/rfc/rfc9110.txt",
+        "status": "REFUTED",
+        "submitter": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "summary": "RFC 9110 §9.2.1 · Cutoff 2022-06 | Evidence SHA-256 effa395b33a05005a90a50cc1d1b3ac3911cfe666a2e66fd7205ced7c01984bc",
+        "title": "HTTP GET is explicitly classified as unsafe"
+      },
+      "evidence": {
+        "cutoff": "2022-06",
+        "primary": {
+          "digest": "a83d026937f6f7929a0e53f8a9bfec4104285f0f89d6dbabd3927c4208a715b2",
+          "month": "2014-06",
+          "obsoletes": [
+            "2616"
+          ],
+          "rfc": "7231",
+          "section": "4.2.1",
+          "status": "REACHABLE"
+        },
+        "quote": "Of the request methods defined by this specification, the GET, HEAD, OPTIONS, and TRACE methods are defined to be safe.",
+        "reason": "",
+        "secondary": {
+          "digest": "ad3b38b7806783d5066714f7ac9aadcba8cec1605a400c7380173737a8adf902",
+          "month": "2022-06",
+          "obsoletes": [
+            "2818",
+            "7230",
+            "7231",
+            "7232",
+            "7233",
+            "7235",
+            "7538",
+            "7615",
+            "7694"
+          ],
+          "rfc": "9110",
+          "section": "9.2.1",
+          "status": "REACHABLE"
+        },
+        "selected": "9110",
+        "start": 1102,
+        "verdict": "REFUTED"
+      },
+      "evidenceSha256": "effa395b33a05005a90a50cc1d1b3ac3911cfe666a2e66fd7205ced7c01984bc",
+      "votes": {
+        "0x21e4F7ba6Ec0fbf70C019fbc0F9A797c3ed1F969": "idle",
+        "0x534af64FFB6796Bc69aBf4C26c50788F1fFAfe56": "agree",
+        "0x62718FbDf0509A398aA525C152D60c1F7A9d33D3": "idle",
+        "0x725Ab89db6A9DD886Ba71Bc5E63a01070C325bE3": "agree",
+        "0xE74a9088aD4d6dBf3C8cABcC0B91072d2a8c8afa": "agree"
+      }
+    },
+    {
+      "id": "MRD-003",
+      "expected": "ACTIVE",
+      "registration": {
+        "hash": "0xd0170a01bd33a6e63dc3e16c96a14eb41c9400f2e4ac8e90ac96587b7e202be0",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "claim": {
+        "adjudications": 0,
+        "category": "PROTOCOL",
+        "claim_id": "MRD-003",
+        "confidence": 0,
+        "criteria": "As of 2022-05; sections 4.2.1 / 9.2.1; The specification defines GET as a safe method.",
+        "evidence_excerpt": "",
+        "last_adjudicator": "",
+        "lat_e4": 356762,
+        "lng_e4": 1396503,
+        "primary_status": "PENDING",
+        "primary_url": "https://www.rfc-editor.org/rfc/rfc7231.txt",
+        "region_label": "Tokyo, JP",
+        "secondary_status": "PENDING",
+        "secondary_url": "https://www.rfc-editor.org/rfc/rfc9110.txt",
+        "status": "ACTIVE",
+        "submitter": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "summary": "Awaiting first Optimistic Democracy adjudication.",
+        "title": "HTTP GET before the June 2022 revision"
+      }
+    },
+    {
+      "id": "MRD-004",
+      "expected": "INCONCLUSIVE",
+      "registration": {
+        "hash": "0x3a8d57a0e855af70ace2c42871b27ecef9178f76505aadcdf5dabcb4323d58c1",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "adjudication": {
+        "hash": "0x54d52a1b4916ca150402f140fb86591666d335ebb80f9e2ff647bcb7bca965ba",
+        "finality": "FINALIZED",
+        "outcome": "MAJORITY_AGREE",
+        "execution": "SUCCESS",
+        "leaderOnly": false,
+        "sender": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb"
+      },
+      "claim": {
+        "adjudications": 1,
+        "category": "PROTOCOL",
+        "claim_id": "MRD-004",
+        "confidence": 0,
+        "criteria": "As of 2022-06; sections 4.2.1 / 9.2.1; The section specifies HTTPS certificate expiration policy.",
+        "evidence_excerpt": "",
+        "last_adjudicator": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "lat_e4": 13521,
+        "lng_e4": 1038198,
+        "primary_status": "REACHABLE",
+        "primary_url": "https://www.rfc-editor.org/rfc/rfc7231.txt",
+        "region_label": "Singapore, SG",
+        "secondary_status": "REACHABLE",
+        "secondary_url": "https://www.rfc-editor.org/rfc/rfc9110.txt",
+        "status": "INCONCLUSIVE",
+        "submitter": "0x9bc879398498C1D9a42b3B8bE5EDbA3bc7b0D6Fb",
+        "summary": "RFC 9110 §9.2.1 · Cutoff 2022-06 | Evidence SHA-256 81fcebe5950a655ba4ed34378874a893e07741244a60eadf5c338ac00e89f95c",
+        "title": "Safe methods and certificate expiration policy"
+      },
+      "evidence": {
+        "cutoff": "2022-06",
+        "primary": {
+          "digest": "a83d026937f6f7929a0e53f8a9bfec4104285f0f89d6dbabd3927c4208a715b2",
+          "month": "2014-06",
+          "obsoletes": [
+            "2616"
+          ],
+          "rfc": "7231",
+          "section": "4.2.1",
+          "status": "REACHABLE"
+        },
+        "quote": "",
+        "reason": "",
+        "secondary": {
+          "digest": "ad3b38b7806783d5066714f7ac9aadcba8cec1605a400c7380173737a8adf902",
+          "month": "2022-06",
+          "obsoletes": [
+            "2818",
+            "7230",
+            "7231",
+            "7232",
+            "7233",
+            "7235",
+            "7538",
+            "7615",
+            "7694"
+          ],
+          "rfc": "9110",
+          "section": "9.2.1",
+          "status": "REACHABLE"
+        },
+        "selected": "9110",
+        "start": -1,
+        "verdict": "INCONCLUSIVE"
+      },
+      "evidenceSha256": "81fcebe5950a655ba4ed34378874a893e07741244a60eadf5c338ac00e89f95c",
+      "votes": {
+        "0x19a02f95418A6c76091CDA37C4fc542CA82805c9": "agree",
+        "0x5744305308D62592B7De585e1999c4Ea51E03C29": "agree",
+        "0x62718FbDf0509A398aA525C152D60c1F7A9d33D3": "agree",
+        "0xe358f855C96d8E7243836cf986eb037175B9467e": "idle",
+        "0xee46B9Dc4c860149B1d140840284e5374854e746": "idle"
+      }
+    }
+  ],
+  "counts": {
+    "active": 1,
+    "inconclusive": 1,
+    "refuted": 1,
+    "total_adjudications": 3,
+    "total_claims": 4,
+    "verified": 1
+  }
+}

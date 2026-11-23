@@ -13,7 +13,7 @@ The StudioNet contract owns source selection, verdict and evidence commitment. I
 1. Open the globe to browse finalized claims. Connect an EIP-6963 wallet such as MetaMask or OKX to publish or adjudicate.
 2. Pin a location and enter a specific statement about an official RFC. Use an official plain-text URL such as `https://www.rfc-editor.org/rfc/rfc7231.txt` and criteria such as `As of 2014-06; section 4.2.1; GET is explicitly defined as safe.`.
 3. To compare with a successor, enter its RFC Editor plain-text URL and use e.g. `As of 2022-06; sections 4.2.1 / 9.2.1; GET is explicitly defined as safe.`.
-4. Open the claim and submit an adjudication. After finality, its dossier shows the verdict, cited excerpt if available, and a digest of the evidence. Check the transaction in the explorer. The animated stages illustrate progress.
+4. Open the claim and submit an adjudication. StudioNet displays a test GEN protocol fee quote when your wallet requests a signature. After finality, its dossier shows the verdict, cited excerpt if available, and a digest of the evidence. Check the transaction in the explorer. The animated stages illustrate progress.
 
 ## Network
 
@@ -22,8 +22,13 @@ The StudioNet contract owns source selection, verdict and evidence commitment. I
 | Network | GenLayer Stable StudioNet, chain ID `61999` |
 | RPC | [StudioNet RPC](https://studio.genlayer.com/api) |
 | Contract call value | `0 GEN`. StudioNet quotes protocol fees separately from the call value. |
-| Contract address | Pending deployment |
+| Contract address | [`0xFF227A2317bF3E700F9A2d42dA835399367f143D`](https://explorer-studio.genlayer.com/address/0xFF227A2317bF3E700F9A2d42dA835399367f143D) |
+| Deployment transaction | [`0xe957f22e63f41e8a8c337e586790cbca6665d17246bb430c55b6db551d4bd819`](https://explorer-studio.genlayer.com/tx/0xe957f22e63f41e8a8c337e586790cbca6665d17246bb430c55b6db551d4bd819) |
 | Contract source | [MeridianAdjudicator](contracts/meridian_adjudicator.py) |
+
+## On-chain example
+
+[StudioNet records](evidence/studionet.json) include the finalized deployment and registration receipts, three adjudication receipts, source fingerprints, and the finalized claim values. The Tokyo example stays `ACTIVE` so the historical-cutoff workflow can be exercised from the globe.
 
 ## Build and verify
 
@@ -41,4 +46,4 @@ python -m unittest discover -s tests -v
 genvm-lint check contracts/meridian_adjudicator.py --json
 ```
 
-For the source-parser test, set `MERIDIAN_RFC_SOURCES` to a directory containing the RFC Editor's `rfc7231.txt` and `rfc9110.txt`. Before deploying, the zero address in the frontend disables chain reads and writes. See the [protocol specification](MERIDIAN_SPEC.md) for the evidence rules and test cases.
+For the source-parser test, set `MERIDIAN_RFC_SOURCES` to a directory containing the RFC Editor's `rfc7231.txt` and `rfc9110.txt`. See the [protocol specification](MERIDIAN_SPEC.md) for the evidence rules and test cases.

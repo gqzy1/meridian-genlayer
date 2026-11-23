@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { abi, createClient } from "genlayer-js";
 import { studionet } from "genlayer-js/chains";
-import { TransactionHashVariant, TransactionStatus } from "genlayer-js/types";
+import { TransactionHashVariant } from "genlayer-js/types";
 import {
   MERIDIAN_CONTRACT_ADDRESS,
   MERIDIAN_DEPLOYED,
@@ -146,6 +146,16 @@ function finalizedResult(receipt: unknown): unknown {
   const bytes = Uint8Array.from(atob(encoded), (digit) => digit.charCodeAt(0));
   if (bytes[0] !== 0) throw new Error("Finalized receipt did not return successfully.");
   return unwrapGenLayerValue(abi.calldata.decode(bytes.slice(1)));
+}
+
+async function writeWithFeeQuote(
+  client: ReturnType<typeof createClient>,
+  request: Parameters<ReturnType<typeof createClient>["writeContract"]>[0],
+  onQuoteReady: () => void,
+) {
+  const fees = await client.estimateTransactionFeesForWrite(request);
+  onQuoteReady();
+  return client.writeContract({ ...request, fees });
 }
 
 function formatReadableError(err: unknown): string {
@@ -305,17 +315,10 @@ export function useMeridianChain({
 
       try {
         const client = await createWriteClient();
-        setTxFeedback({
-          phase: "AWAITING_SIGNATURE",
-          txHash: null,
-          error: null,
-          targetClaimId: null,
-        });
-
         const latE4 = Math.round(payload.lat * 10000);
         const lngE4 = Math.round(payload.lng * 10000);
 
-        const txHash = await client.writeContract({
+        const txHash = await writeWithFeeQuote(client, {
           address: MERIDIAN_CONTRACT_ADDRESS,
           functionName: "submit_claim",
           args: [
@@ -329,6 +332,13 @@ export function useMeridianChain({
             payload.secondaryUrl.trim(),
           ],
           value: BigInt(0),
+        }, () => {
+          setTxFeedback({
+            phase: "AWAITING_SIGNATURE",
+            txHash: null,
+            error: null,
+            targetClaimId: null,
+          });
         });
 
         setTxFeedback({
@@ -340,7 +350,7 @@ export function useMeridianChain({
 
         await client.waitForTransactionReceipt({
           hash: txHash,
-          status: TransactionStatus.FINALIZED,
+          waitUntil: "finalized",
           retries: 100,
           interval: 2500,
         });
@@ -411,18 +421,18 @@ export function useMeridianChain({
 
       try {
         const client = await createWriteClient();
-        setTxFeedback({
-          phase: "AWAITING_SIGNATURE",
-          txHash: null,
-          error: null,
-          targetClaimId: claimId,
-        });
-
-        const txHash = await client.writeContract({
+        const txHash = await writeWithFeeQuote(client, {
           address: MERIDIAN_CONTRACT_ADDRESS,
           functionName: "adjudicate_claim",
           args: [claimId],
           value: BigInt(0),
+        }, () => {
+          setTxFeedback({
+            phase: "AWAITING_SIGNATURE",
+            txHash: null,
+            error: null,
+            targetClaimId: claimId,
+          });
         });
 
         // Ignite the 5-beam globe animation + V1-V5 consensus arc
@@ -453,7 +463,7 @@ export function useMeridianChain({
 
         await client.waitForTransactionReceipt({
           hash: txHash,
-          status: TransactionStatus.FINALIZED,
+          waitUntil: "finalized",
           retries: 140,
           interval: 3000,
         });

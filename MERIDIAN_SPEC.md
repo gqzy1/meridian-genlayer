@@ -29,14 +29,14 @@ Claims begin in `ACTIVE`. Any wallet can request a review, and each successful r
 
 ## StudioNet acceptance cases
 
-Deployment address is pending. The table specifies inputs and expected results. It contains no transaction evidence.
+StudioNet deployment `0xFF227A2317bF3E700F9A2d42dA835399367f143D` finalized with successful execution. Deployment transaction `0xe957f22e63f41e8a8c337e586790cbca6665d17246bb430c55b6db551d4bd819`. The table specifies inputs and expected results. See [StudioNet records](evidence/studionet.json) for the finalized readback and receipt evidence.
 
 All cases use [RFC 7231](https://www.rfc-editor.org/rfc/rfc7231.txt) and [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.txt) as an explicit pair.
 
 | Registration | Geographic pin | Criteria | Expected state |
 | --- | --- | --- | --- |
 | MRD-001 | Zurich, CH (`473769, 85417`) | As of 2022-06; sections 4.2.1 / 9.2.1; The specification defines GET as a safe method. | `VERIFIED`, RFC 9110 §9.2.1 |
-| MRD-002 | San Francisco, US (`377749, -1224194`) | As of 2022-06; sections 4.2.1 / 9.2.1; The specification defines POST as a safe method. | `REFUTED`, RFC 9110 §9.2.1 |
+| MRD-002 | San Francisco, US (`377749, -1224194`) | As of 2022-06; sections 4.2.1 / 9.2.1; The specification explicitly classifies GET as unsafe. | `REFUTED`, RFC 9110 §9.2.1 |
 | MRD-003 | Tokyo, JP (`356762, 1396503`) | As of 2022-05; sections 4.2.1 / 9.2.1; The specification defines GET as a safe method. | `ACTIVE` after registration. A review should select RFC 7231 §4.2.1. |
 | MRD-004 | Singapore, SG (`13521, 1038198`) | As of 2022-06; sections 4.2.1 / 9.2.1; The section specifies HTTPS certificate expiration policy. | `INCONCLUSIVE`, RFC 9110 §9.2.1 |
 

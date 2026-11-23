@@ -207,14 +207,14 @@ export const MESSAGES: Record<Locale, Messages> = {
     submitBtn: "Publish to StudioNet",
     submittingBtn: "Publishing On-Chain...",
     walletModalTitle: "Connect Multi-Wallet",
-    walletModalSubtitle: "Auto-discovered via EIP-6963 · StudioNet (61999) is gasless",
+    walletModalSubtitle: "Auto-discovered via EIP-6963 · StudioNet (61999)",
     walletDetected: "Detected Browser Wallets",
     walletNoneDetected:
       "No EVM wallet extension detected. Install MetaMask, Rabby, OKX, or Bitget Wallet to sign on-chain writes. Read-only browsing works without a wallet.",
     walletDisconnect: "Disconnect",
     walletSwitchNetwork: "Switch to StudioNet (61999)",
     walletWrongChain: "Wrong Network",
-    gaslessHint: "0 GEN required on StudioNet",
+    gaslessHint: "StudioNet quotes fees in test GEN",
     statusLabels: {
       ACTIVE: "AWAITING VERDICT",
       VERIFIED: "VERIFIED ON-CHAIN",
@@ -334,14 +334,14 @@ export const MESSAGES: Record<Locale, Messages> = {
     submitBtn: "提交写入 StudioNet",
     submittingBtn: "链上写入中...",
     walletModalTitle: "多钱包连接",
-    walletModalSubtitle: "支持 EIP-6963 自动发现 · StudioNet (61999) 免 Gas",
+    walletModalSubtitle: "支持 EIP-6963 自动发现 · StudioNet (61999)",
     walletDetected: "已检测到浏览器钱包",
     walletNoneDetected:
       "未检测到 EVM 钱包插件。请安装 MetaMask、Rabby、OKX 或 Bitget 钱包以发起链上写入；浏览真实链上数据无需连接钱包。",
     walletDisconnect: "断开连接",
     walletSwitchNetwork: "一键切换 StudioNet (61999)",
     walletWrongChain: "网络不匹配",
-    gaslessHint: "StudioNet 测试网免 Gas（0 GEN 即可）",
+    gaslessHint: "StudioNet 交易按报价使用测试 GEN",
     statusLabels: {
       ACTIVE: "待裁决",
       VERIFIED: "链上已证实",

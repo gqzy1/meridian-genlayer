@@ -80,7 +80,7 @@ def _read_document(url: str, section: str) -> dict:
              "section": section, "digest": "", "body": ""}
     try:
         response = gl.nondet.web.request(url, method="GET")
-        if response.status_code != 200:
+        if response.status != 200:
             return empty
         if not 0 < len(response.body) <= MAX_DOCUMENT_BYTES:
             return {**empty, "status": "EMPTY"}
